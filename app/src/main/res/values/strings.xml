@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">WeatherApp</string>
     <string name="apikey">040754a4e689b45bedb7836ce6f2c49d</string>
+    <string name="location_null">GPS location unreachable</string>
+    <string name="gps_permission_granted">GPS permission granted</string>
+    <string name="gps_permission_not_granted">GPS permission not granted, you will be unable to use gps search</string>
 </resources>

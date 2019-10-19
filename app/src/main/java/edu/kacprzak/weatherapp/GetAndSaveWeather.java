@@ -149,14 +149,9 @@ public class GetAndSaveWeather extends AsyncTask<Void, Void, String> {
             dataHashMap.put("sunrise", formatter.format(new Date(Long.parseLong(obj.getJSONObject("sys").get("sunrise").toString())*1000)));
             dataHashMap.put("sunset", formatter.format(new Date(Long.parseLong(obj.getJSONObject("sys").get("sunset").toString())*1000)));
 
-            Log.d("dataHashMap.get(suse): ", "> " + formatter.format(new Date(Long.parseLong(obj.getJSONObject("sys").get("sunset").toString())*1000)));
-            Log.d("dataHashMap.get(suse): ", "> " + Long.parseLong(obj.getJSONObject("sys").get("sunrise").toString()));
-            Log.d("dataHashMap.get(suse): ", "> " + obj.getJSONObject("sys").get("sunrise").toString());
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-
 
         dbManager.insert(
                 dataHashMap.get("city_id"),
