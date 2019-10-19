@@ -128,12 +128,10 @@ public class GetAndSaveWeather extends AsyncTask<Void, Void, String> {
         dataHashMap.put("sunrise", "");
         dataHashMap.put("sunset", "");
 
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
         try {
             JSONObject obj = new JSONObject(response);
-
-
 
             dataHashMap.put("city_id", (obj.get("id")).toString());
             dataHashMap.put("city_name", (obj.get("name")).toString());
@@ -148,11 +146,16 @@ public class GetAndSaveWeather extends AsyncTask<Void, Void, String> {
             dataHashMap.put("wind_speed", (obj.getJSONObject("wind").get("speed")).toString());
             dataHashMap.put("wind_deg", (obj.getJSONObject("wind").get("speed")).toString());
             dataHashMap.put("clouds_all", (obj.getJSONObject("clouds").get("all")).toString());
-            dataHashMap.put("sunrise", formatter.format(new Date(Long.parseLong(obj.getJSONObject("sys").get("sunrise").toString()))));
-            dataHashMap.put("sunset", formatter.format(new Date(Long.parseLong(obj.getJSONObject("sys").get("sunset").toString()))));
+            dataHashMap.put("sunrise", formatter.format(new Date(Long.parseLong(obj.getJSONObject("sys").get("sunrise").toString())*1000)));
+            dataHashMap.put("sunset", formatter.format(new Date(Long.parseLong(obj.getJSONObject("sys").get("sunset").toString())*1000)));
+
+            Log.d("dataHashMap.get(suse): ", "> " + formatter.format(new Date(Long.parseLong(obj.getJSONObject("sys").get("sunset").toString())*1000)));
+            Log.d("dataHashMap.get(suse): ", "> " + Long.parseLong(obj.getJSONObject("sys").get("sunrise").toString()));
+            Log.d("dataHashMap.get(suse): ", "> " + obj.getJSONObject("sys").get("sunrise").toString());
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
 
 
         dbManager.insert(

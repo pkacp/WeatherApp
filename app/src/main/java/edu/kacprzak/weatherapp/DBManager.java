@@ -36,7 +36,7 @@ public class DBManager {
                        String main_humidity, String wind_speed, String wind_deg, String clouds_all, String sunrise, String sunset) {
         ContentValues contentValue = new ContentValues();
         Date now = new Date();
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         contentValue.put(DatabaseHelper.CREATED_AT, formatter.format(now));
         contentValue.put(DatabaseHelper.CITY_ID, city_id);
         contentValue.put(DatabaseHelper.CITY_NAME, city_name);
