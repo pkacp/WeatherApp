@@ -1,6 +1,20 @@
 <resources>
     <string name="app_name">WeatherApp</string>
     <string name="apikey">040754a4e689b45bedb7836ce6f2c49d</string>
+
+    <!--  main_activity fields  -->
+    <string name="update_time_info">Updated at:</string>
+    <string name="city_name_info">City:</string>
+    <string name="temp_info">Temperature:</string>
+    <string name="description_info">Descryption</string>
+    <string name="pressure_info">Pressure:</string>
+    <string name="humidity_info">Humidity:</string>
+    <string name="wind_speed_info">Wind speed:</string>
+    <string name="wind_direction_info">Wind direction:</string>
+    <string name="sunrise_time_info">Sunrise time:</string>
+    <string name="sunset_time_info">Sunset time:</string>
+    <string name="use_current_localization">Use current localization</string>
+
     <string name="location_null">GPS location unreachable</string>
     <string name="gps_permission_granted">GPS permission granted</string>
     <string name="gps_permission_not_granted">GPS permission not granted, you will be unable to use gps search</string>

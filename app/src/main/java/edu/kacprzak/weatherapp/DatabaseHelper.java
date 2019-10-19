@@ -27,8 +27,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String CLOUDS_ALL = "clouds_all";
     public static final String SUNRISE = "sunrise";
     public static final String SUNSET = "sunset";
-//    public static final String JSON = "json";
-//    public static final String DESC = "description";
 
     // Database Information
     static final String DB_NAME = "WEATHER.DB";

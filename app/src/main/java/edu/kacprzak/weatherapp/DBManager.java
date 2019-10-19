@@ -17,6 +17,26 @@ public class DBManager {
 
     private SQLiteDatabase database;
 
+    String[] allColumns = new String[] {
+            DatabaseHelper._ID,
+            DatabaseHelper.CREATED_AT,
+            DatabaseHelper.CITY_ID,
+            DatabaseHelper.CITY_NAME,
+            DatabaseHelper.LON,
+            DatabaseHelper.LAT,
+            DatabaseHelper.WEATHER_ID,
+            DatabaseHelper.WEATHER_MAIN,
+            DatabaseHelper.WEATHER_DESC,
+            DatabaseHelper.MAIN_TEMP,
+            DatabaseHelper.MAIN_PRESSURE,
+            DatabaseHelper.MAIN_HUMIDITY,
+            DatabaseHelper.WIND_SPEED,
+            DatabaseHelper.WIND_DEG,
+            DatabaseHelper.CLOUDS_ALL,
+            DatabaseHelper.SUNRISE,
+            DatabaseHelper.SUNSET
+    };
+
     public DBManager(Context c) {
         context = c;
     }
@@ -31,9 +51,9 @@ public class DBManager {
         dbHelper.close();
     }
 
-    public void insert(String city_id, String city_name, String lon, String lat, String weather_id,
-                       String weather_main, String weather_desc, String main_temp, String main_pressure,
-                       String main_humidity, String wind_speed, String wind_deg, String clouds_all, String sunrise, String sunset) {
+    public void insertCurrentWeather(String city_id, String city_name, String lon, String lat, String weather_id,
+                                     String weather_main, String weather_desc, String main_temp, String main_pressure,
+                                     String main_humidity, String wind_speed, String wind_deg, String clouds_all, String sunrise, String sunset) {
         ContentValues contentValue = new ContentValues();
         Date now = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -56,14 +76,23 @@ public class DBManager {
         database.insert(DatabaseHelper.TABLE_NAME, null, contentValue);
     }
 
-//    public Cursor fetch() {
-//        String[] columns = new String[] { DatabaseHelper._ID, DatabaseHelper.JSON };
-//        Cursor cursor = database.query(DatabaseHelper.TABLE_NAME, columns, null, null, null, null, null);
-//        if (cursor != null) {
-//            cursor.moveToFirst();
-//        }
-//        return cursor;
-//    }
+    public Cursor fetch() {
+        Cursor cursor = database.query(DatabaseHelper.TABLE_NAME, allColumns, null, null, null, null, null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+        return cursor;
+    }
+
+    public Cursor fetchLastInsertedRow(){
+        Cursor cursor = database.query(DatabaseHelper.TABLE_NAME, allColumns, null, null, null, null, null);
+        if (cursor != null) {
+            cursor.moveToLast();
+        }
+        return cursor;
+
+    }
+
 //
 //    public int update(long _id, String json) {
 //        ContentValues contentValues = new ContentValues();

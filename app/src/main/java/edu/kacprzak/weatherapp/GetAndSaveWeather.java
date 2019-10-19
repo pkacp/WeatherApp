@@ -40,12 +40,6 @@ public class GetAndSaveWeather extends AsyncTask<Void, Void, String> {
         fullUrlString = (urlBeginWeather + "q=" + city + "&units=metric" + "&lang=" + language + "&APPID=" + apikey);
     }
 
-    //    public GetAndSaveWeather(String city, Context context) throws MalformedURLException {
-//        this.city = city;
-//        this.context = context;
-//        fullUrl = new URL(urlBeginWeather + city + "&APPID=" + apikey);
-//    }
-
     @Override
     protected void onPreExecute() {
         super.onPreExecute();
@@ -153,7 +147,7 @@ public class GetAndSaveWeather extends AsyncTask<Void, Void, String> {
             e.printStackTrace();
         }
 
-        dbManager.insert(
+        dbManager.insertCurrentWeather(
                 dataHashMap.get("city_id"),
                 dataHashMap.get("city_name"),
                 dataHashMap.get("lon"),

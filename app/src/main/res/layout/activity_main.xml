@@ -6,26 +6,237 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.197"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.125" />
-
     <Button
         android:id="@+id/btnGps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:text="uzyj lokalizacji"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="@+id/textView2" />
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="36dp"
+        android:text="@string/use_current_localization"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="@+id/guideline2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="50dp" />
+
+    <TextView
+        android:id="@+id/tvUpdatedAtInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/update_time_info"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/guideline3" />
+
+    <TextView
+        android:id="@+id/tvUpdatedAtValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/tvUpdatedAtInfo"
+        app:layout_constraintStart_toEndOf="@+id/tvUpdatedAtInfo" />
+
+    <TextView
+        android:id="@+id/tvCityInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/city_name_info"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/tvUpdatedAtInfo" />
+
+    <TextView
+        android:id="@+id/tvCityValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/tvCityInfo"
+        app:layout_constraintStart_toEndOf="@+id/tvCityInfo" />
+
+    <TextView
+        android:id="@+id/tvTemperatureInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/temp_info"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/tvCityInfo" />
+
+    <TextView
+        android:id="@+id/tvTemperatureValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="TextView"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvTemperatureInfo"
+        app:layout_constraintStart_toEndOf="@+id/tvTemperatureInfo" />
+
+    <TextView
+        android:id="@+id/tvDescryptionInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/description_info"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/tvTemperatureInfo" />
+
+    <TextView
+        android:id="@+id/tvPressureInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/pressure_info"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescryptionInfo" />
+
+    <TextView
+        android:id="@+id/tvHumidityInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/humidity_info"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/tvPressureInfo" />
+
+    <TextView
+        android:id="@+id/tvWindSpeedInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/wind_speed_info"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/tvHumidityInfo" />
+
+    <TextView
+        android:id="@+id/tvWindDirectionInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/wind_direction_info"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/tvWindSpeedInfo" />
+
+    <TextView
+        android:id="@+id/tvSunriseInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/sunrise_time_info"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/tvWindDirectionInfo" />
+
+    <TextView
+        android:id="@+id/tvSunsetInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/sunset_time_info"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/tvSunriseInfo" />
+
+    <TextView
+        android:id="@+id/tvDescriptionValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/tvDescryptionInfo"
+        app:layout_constraintStart_toEndOf="@+id/tvDescryptionInfo" />
+
+    <TextView
+        android:id="@+id/tvPressureValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/tvPressureInfo"
+        app:layout_constraintStart_toEndOf="@+id/tvPressureInfo" />
+
+    <TextView
+        android:id="@+id/tvHumidityValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/tvHumidityInfo"
+        app:layout_constraintStart_toEndOf="@+id/tvHumidityInfo" />
+
+    <TextView
+        android:id="@+id/tvWindSpeedValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/tvWindSpeedInfo"
+        app:layout_constraintStart_toEndOf="@+id/tvWindSpeedInfo" />
+
+    <TextView
+        android:id="@+id/tvWindDirectionValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/tvWindDirectionInfo"
+        app:layout_constraintStart_toEndOf="@+id/tvWindDirectionInfo" />
+
+    <TextView
+        android:id="@+id/tvSunriseTimeValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSunriseInfo"
+        app:layout_constraintStart_toEndOf="@+id/tvSunriseInfo" />
+
+    <TextView
+        android:id="@+id/tvSunsetTimeValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/tvSunsetInfo"
+        app:layout_constraintStart_toEndOf="@+id/tvSunsetInfo" />
+
+    <Button
+        android:id="@+id/btnRefresh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="osawierz"
+        tools:layout_editor_absoluteX="289dp"
+        tools:layout_editor_absoluteY="5dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
