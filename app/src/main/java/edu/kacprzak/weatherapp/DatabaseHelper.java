@@ -22,7 +22,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String MAIN_TEMP = "main_temp";
     public static final String MAIN_PRESSURE = "weather_pressure";
     public static final String MAIN_HUMIDITY = "weather_humidity";
-    public static final String WIND = "wind";
+    public static final String WIND_SPEED = "wind_speed";
+    public static final String WIND_DEG = "wind_deg";
     public static final String CLOUDS_ALL = "clouds_all";
     public static final String SUNRISE = "sunrise";
     public static final String SUNSET = "sunset";
@@ -41,7 +42,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + CREATED_AT + " DATETIME NOT NULL,"
             + CITY_ID + " INTEGER, "
             + CITY_NAME + " TEXT, "
-            + LON + "TEXT, "
+            + LON + " TEXT, "
             + LAT +" TEXT, "
             + WEATHER_ID + " NUMBER, "
             + WEATHER_MAIN + " TEXT, "
@@ -49,7 +50,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + MAIN_TEMP + " TEXT, "
             + MAIN_PRESSURE + " TEXT, "
             + MAIN_HUMIDITY + " TEXT, "
-            + WIND + " TEXT, "
+            + WIND_SPEED + " TEXT, "
+            + WIND_DEG + " TEXT, "
             + CLOUDS_ALL + " TEXT, "
             + SUNRISE + " DATETIME, "
             + SUNSET + " DATETIME "
