@@ -14,7 +14,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public static final String CREATED_AT = "created_at";
     public static final String CITY_ID = "city_id";
     public static final String CITY_NAME = "city_name";
-    public static final String JSON = "json";
+    public static final String LON = "lon";
+    public static final String LAT = "lat";
+    public static final String WEATHER_ID = "weather_id";
+    public static final String WEATHER_MAIN = "weather_main";
+    public static final String WEATHER_DESC = "weather_desc";
+    public static final String MAIN_TEMP = "main_temp";
+    public static final String MAIN_PRESSURE = "weather_pressure";
+    public static final String MAIN_HUMIDITY = "weather_humidity";
+    public static final String WIND = "wind";
+    public static final String CLOUDS_ALL = "clouds_all";
+    public static final String SUNRISE = "sunrise";
+    public static final String SUNSET = "sunset";
+//    public static final String JSON = "json";
 //    public static final String DESC = "description";
 
     // Database Information
@@ -24,8 +36,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     static final int DB_VERSION = 1;
 
     // Creating table query
-    private static final String CREATE_TABLE = "create table " + TABLE_NAME + "(" + _ID
-            + " INTEGER PRIMARY KEY AUTOINCREMENT, " + CREATED_AT + " DATETIME NOT NULL," + JSON + " TEXT );";
+    private static final String CREATE_TABLE = "create table " + TABLE_NAME + "("
+            + _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + CREATED_AT + " DATETIME NOT NULL,"
+            + CITY_ID + " INTEGER, "
+            + CITY_NAME + " TEXT, "
+            + LON + "TEXT, "
+            + LAT +" TEXT, "
+            + WEATHER_ID + " NUMBER, "
+            + WEATHER_MAIN + " TEXT, "
+            + WEATHER_DESC + " TEXT, "
+            + MAIN_TEMP + " TEXT, "
+            + MAIN_PRESSURE + " TEXT, "
+            + MAIN_HUMIDITY + " TEXT, "
+            + WIND + " TEXT, "
+            + CLOUDS_ALL + " TEXT, "
+            + SUNRISE + " DATETIME, "
+            + SUNSET + " DATETIME "
+            + ");";
 
     public DatabaseHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);

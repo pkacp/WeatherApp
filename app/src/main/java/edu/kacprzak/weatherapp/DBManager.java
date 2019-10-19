@@ -31,12 +31,27 @@ public class DBManager {
         dbHelper.close();
     }
 
-    public void insert(String json) {
+    public void insert(int city_id, String city_name, String lon, String lat, String weather_id,
+                       String weather_main, String weather_desc, String main_temp, String main_pressure,
+                       String main_humidity, String wind, String clouds_all, Date sunrise, Date sunset) {
         ContentValues contentValue = new ContentValues();
         Date date = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
         contentValue.put(DatabaseHelper.CREATED_AT, formatter.format(date));
-        contentValue.put(DatabaseHelper.JSON, json);
+        contentValue.put(DatabaseHelper.CITY_ID, city_id);
+        contentValue.put(DatabaseHelper.CITY_NAME, city_name);
+        contentValue.put(DatabaseHelper.LON, lon);
+        contentValue.put(DatabaseHelper.LAT, lat);
+        contentValue.put(DatabaseHelper.WEATHER_ID, weather_id);
+        contentValue.put(DatabaseHelper.WEATHER_MAIN, weather_main);
+        contentValue.put(DatabaseHelper.WEATHER_DESC, weather_desc);
+        contentValue.put(DatabaseHelper.MAIN_TEMP, main_temp);
+        contentValue.put(DatabaseHelper.MAIN_PRESSURE, main_pressure);
+        contentValue.put(DatabaseHelper.MAIN_HUMIDITY, main_humidity);
+        contentValue.put(DatabaseHelper.WIND, wind);
+        contentValue.put(DatabaseHelper.CLOUDS_ALL, clouds_all);
+        contentValue.put(DatabaseHelper.SUNRISE, sunrise.toString()); //TODO pomyslec nad tostring, gdzie je zrobic?
+        contentValue.put(DatabaseHelper.SUNSET, sunset.toString());
         database.insert(DatabaseHelper.TABLE_NAME, null, contentValue);
     }
 
