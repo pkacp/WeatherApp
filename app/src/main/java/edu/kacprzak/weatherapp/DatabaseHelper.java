@@ -12,6 +12,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // Table columns
     public static final String _ID = "_id";
     public static final String CREATED_AT = "created_at";
+    public static final String CITY_ID = "city_id";
+    public static final String CITY_NAME = "city_name";
     public static final String JSON = "json";
 //    public static final String DESC = "description";
 
