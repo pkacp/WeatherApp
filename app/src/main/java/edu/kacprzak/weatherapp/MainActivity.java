@@ -63,10 +63,10 @@ public class MainActivity extends Activity {
 
                 tvUpdatedAt.setText(cursor.getString(1));
                 tvCity.setText(cursor.getString(3));
-                tvTemperature.setText(cursor.getString(9));
+                tvTemperature.setText(cursor.getString(9) + " \u2103");
                 tvDescryption.setText(cursor.getString(8));
-                tvPressure.setText(cursor.getString(10));
-                tvHumidity.setText(cursor.getString(11));
+                tvPressure.setText(cursor.getString(10) + "hPa");
+                tvHumidity.setText(cursor.getString(11) + "");
                 tvWindSpeed.setText(cursor.getString(12));
                 tvWindDirection.setText(cursor.getString(13));
                 tvSunriseTime.setText(cursor.getString(15));
