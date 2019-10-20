@@ -30,4 +30,5 @@
     <string name="show_weather">Show weather</string>
     <string name="show_forecast">Show forecast</string>
     <string name="city_placeholder">Here will go selected location</string>
+
 </resources>

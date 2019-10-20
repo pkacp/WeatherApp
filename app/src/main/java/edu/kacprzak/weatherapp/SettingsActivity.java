@@ -39,7 +39,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     SharedPreferences sharedpreferences;
 
-    public static final String MyPREFERENCES = "MyPrefs";
+    public static final String MyPREFERENCES = "WeatherAppSavedOptions";
     public static final String cityIdKey = "cityId";
     public static final String cityNameKey = "cityName";
     public static final String apiKey = "040754a4e689b45bedb7836ce6f2c49d";
@@ -75,7 +75,8 @@ public class SettingsActivity extends AppCompatActivity {
         btnGoToWeather.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
+                Intent intent = new Intent(SettingsActivity.this, WeatherActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -86,7 +87,6 @@ public class SettingsActivity extends AppCompatActivity {
 
             }
         });
-
     }
 
     private void saveLocationToSharedPreferences(String cityId, String cityName) {
@@ -219,7 +219,7 @@ public class SettingsActivity extends AppCompatActivity {
                 cityId = (obj.get("id")).toString();
                 cityName = (obj.get("name")).toString();
 
-                Log.d("Json res location: ", "city:" + cityId + " " + cityName + "URL: " + fullUrlString);
+                Log.d("Json res location: ", "city:" + cityId + " " + cityName + " URL: " + fullUrlString);
 
                 saveLocationToSharedPreferences(cityId, cityName);
                 setCityValueTextView(cityName);

@@ -1,25 +1,20 @@
 package edu.kacprzak.weatherapp;
 
 import android.app.Activity;
-import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class MainActivity extends Activity {
+public class WeatherActivity extends Activity {
 
     private DBManager dbManager;
-
-    SharedPreferences sharedpreferences;
-
-    public static final String MyPREFERENCES = "MyPrefs";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_weather);
 
 
 
@@ -37,9 +32,9 @@ public class MainActivity extends Activity {
 //        sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
 //
 //        if(sharedpreferences.contains(cityIdKey)){
-//            new GetAndSaveWeather(this, sharedpreferences.getInt(cityIdKey, 2643743), "pl", apiKey).execute(); //TODO get language depending on os lang
+//            new GetWeather(this, sharedpreferences.getInt(cityIdKey, 2643743), "pl", apiKey).execute(); //TODO get language depending on os lang
 //        }else if (sharedpreferences.contains(latKey) && sharedpreferences.contains(lonKey)){
-//            new GetAndSaveWeather(this, (double) sharedpreferences.getFloat(latKey, 0.0f), (double) sharedpreferences.getFloat(lonKey, 0.0f), "pl", apiKey).execute();
+//            new GetWeather(this, (double) sharedpreferences.getFloat(latKey, 0.0f), (double) sharedpreferences.getFloat(lonKey, 0.0f), "pl", apiKey).execute();
 //        }else{
 //            String msg = getString(R.string.unable_to_read_from_shr_pref);
 //            Toast toast = Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG);

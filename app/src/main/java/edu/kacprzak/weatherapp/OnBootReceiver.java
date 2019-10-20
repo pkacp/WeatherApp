@@ -8,8 +8,9 @@ public class OnBootReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
+        Util.scheduleJob(context);
 //        Intent i = new Intent("com.prac.test.MyPersistingService");
-//        i.setClass(context, GetAndSaveWeather.class);
+//        i.setClass(context, GetWeather.class);
 //        context.startService(i);
     }
 }

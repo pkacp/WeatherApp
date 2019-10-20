@@ -14,7 +14,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class GetAndSaveWeather extends AsyncTask<Void, Void, String> {
+public class GetWeather extends AsyncTask<Void, Void, String> {
 
 
     private Context context;
@@ -23,18 +23,18 @@ public class GetAndSaveWeather extends AsyncTask<Void, Void, String> {
     private Activity callingActivity;
     private URL fullUrl;
 
-    public GetAndSaveWeather(Context context, String city, String language, String apikey) {
+    public GetWeather(Context context, String city, String language, String apikey) {
         this.context = context;
         this.callingActivity = (Activity) context;
         fullUrlString = (urlBeginWeather + "q=" + city + "&units=metric" + "&lang=" + language + "&APPID=" + apikey);
     }
 
-    public GetAndSaveWeather(Context context, double lat, double len, String language, String apikey){
+    public GetWeather(Context context, double lat, double len, String language, String apikey){
         this.context = context;
         fullUrlString = (urlBeginWeather + "lat=" + lat + "&lon=" + len + "&units=metric" + "&lang=" + language + "&APPID=" + apikey);
     }
 
-    public GetAndSaveWeather(Context context, int city_id, String language, String apikey) {
+    public GetWeather(Context context, int city_id, String language, String apikey) {
         this.context = context;
         fullUrlString = (urlBeginWeather + "id=" + city_id + "&units=metric" + "&lang=" + language + "&APPID=" + apikey);
     }
@@ -98,8 +98,6 @@ public class GetAndSaveWeather extends AsyncTask<Void, Void, String> {
         Intent intent = new Intent(context, SaveWeatherToDb.class);
         intent.putExtra("dataToSave", result);
         context.startService(intent);
-//        callingActivity.setTextViewsValues(); //TODO make service as bound servce and refresh text views
-//        decodeAndSave(result);
 
     }
 
