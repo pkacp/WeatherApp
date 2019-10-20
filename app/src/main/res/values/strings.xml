@@ -18,4 +18,5 @@
     <string name="location_null">GPS location unreachable</string>
     <string name="gps_permission_granted">GPS permission granted</string>
     <string name="gps_permission_not_granted">GPS permission not granted, you will be unable to use gps search</string>
+    <string name="unable_to_read_from_shr_pref">Unable to read shared preferences</string>
 </resources>

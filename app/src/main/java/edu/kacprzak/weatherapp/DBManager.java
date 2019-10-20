@@ -93,7 +93,6 @@ public class DBManager {
 
     }
 
-//
 //    public int update(long _id, String json) {
 //        ContentValues contentValues = new ContentValues();
 //        contentValues.put(DatabaseHelper.JSON, json);

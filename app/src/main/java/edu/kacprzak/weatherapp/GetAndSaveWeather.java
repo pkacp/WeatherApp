@@ -1,25 +1,18 @@
 package edu.kacprzak.weatherapp;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Parcelable;
 import android.util.Log;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.Serializable;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.HashMap;
 
 public class GetAndSaveWeather extends AsyncTask<Void, Void, String> {
 
@@ -27,10 +20,12 @@ public class GetAndSaveWeather extends AsyncTask<Void, Void, String> {
     private Context context;
     private String urlBeginWeather = "http://api.openweathermap.org/data/2.5/weather?";
     private String fullUrlString;
+    private Activity callingActivity;
     private URL fullUrl;
 
     public GetAndSaveWeather(Context context, String city, String language, String apikey) {
         this.context = context;
+        this.callingActivity = (Activity) context;
         fullUrlString = (urlBeginWeather + "q=" + city + "&units=metric" + "&lang=" + language + "&APPID=" + apikey);
     }
 
@@ -103,6 +98,7 @@ public class GetAndSaveWeather extends AsyncTask<Void, Void, String> {
         Intent intent = new Intent(context, SaveWeatherToDb.class);
         intent.putExtra("dataToSave", result);
         context.startService(intent);
+//        callingActivity.setTextViewsValues(); //TODO make service as bound servce and refresh text views
 //        decodeAndSave(result);
 
     }

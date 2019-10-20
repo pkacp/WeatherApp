@@ -1,22 +1,16 @@
 package edu.kacprzak.weatherapp;
 
 import android.app.IntentService;
-import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
-
-import androidx.annotation.Nullable;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 
 public class SaveWeatherToDb extends IntentService {
-
 
     private DBManager dbManager;
 
@@ -26,8 +20,6 @@ public class SaveWeatherToDb extends IntentService {
 
     @Override
     protected void onHandleIntent(Intent intent) {
-
-        Log.d("ddddddddddd", "uuuuuuuuuuuuuuuuuuuuuuuuuuuu");
 
         String response = intent.getStringExtra("dataToSave");
 

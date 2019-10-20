@@ -7,26 +7,26 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Table Name
-    public static final String TABLE_NAME = "WEATHER_HISTORY";
+    static final String TABLE_NAME = "WEATHER_HISTORY";
 
     // Table columns
-    public static final String _ID = "_id";
-    public static final String CREATED_AT = "created_at";
-    public static final String CITY_ID = "city_id";
-    public static final String CITY_NAME = "city_name";
-    public static final String LON = "lon";
-    public static final String LAT = "lat";
-    public static final String WEATHER_ID = "weather_id";
-    public static final String WEATHER_MAIN = "weather_main";
-    public static final String WEATHER_DESC = "weather_desc";
-    public static final String MAIN_TEMP = "main_temp";
-    public static final String MAIN_PRESSURE = "weather_pressure";
-    public static final String MAIN_HUMIDITY = "weather_humidity";
-    public static final String WIND_SPEED = "wind_speed";
-    public static final String WIND_DEG = "wind_deg";
-    public static final String CLOUDS_ALL = "clouds_all";
-    public static final String SUNRISE = "sunrise";
-    public static final String SUNSET = "sunset";
+    static final String _ID = "_id";
+    static final String CREATED_AT = "created_at";
+    static final String CITY_ID = "city_id";
+    static final String CITY_NAME = "city_name";
+    static final String LON = "lon";
+    static final String LAT = "lat";
+    static final String WEATHER_ID = "weather_id";
+    static final String WEATHER_MAIN = "weather_main";
+    static final String WEATHER_DESC = "weather_desc";
+    static final String MAIN_TEMP = "main_temp";
+    static final String MAIN_PRESSURE = "weather_pressure";
+    static final String MAIN_HUMIDITY = "weather_humidity";
+    static final String WIND_SPEED = "wind_speed";
+    static final String WIND_DEG = "wind_deg";
+    static final String CLOUDS_ALL = "clouds_all";
+    static final String SUNRISE = "sunrise";
+    static final String SUNSET = "sunset";
 
     // Database Information
     static final String DB_NAME = "WEATHER.DB";
