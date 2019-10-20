@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">WeatherApp</string>
-    <string name="apikey">040754a4e689b45bedb7836ce6f2c49d</string>
 
     <!--  main_activity fields  -->
     <string name="update_time_info">Updated at:</string>
@@ -13,10 +12,22 @@
     <string name="wind_direction_info">Wind direction:</string>
     <string name="sunrise_time_info">Sunrise time:</string>
     <string name="sunset_time_info">Sunset time:</string>
-    <string name="use_current_localization">Use current localization</string>
+    <string name="refresh">Refresh</string>
 
+    <!--  Settings activity  -->
+    <string name="use_current_localization">Use current location</string>
+    <string name="use_location_from_list">Use location from list</string>
+    <string name="save_settings">Save</string>
+    <string name="selected_city_name_info">Selected location:</string>
+
+    <!--    Random texts-->
     <string name="location_null">GPS location unreachable</string>
     <string name="gps_permission_granted">GPS permission granted</string>
     <string name="gps_permission_not_granted">GPS permission not granted, you will be unable to use gps search</string>
     <string name="unable_to_read_from_shr_pref">Unable to read shared preferences</string>
+    <string name="loading">Loading</string>
+    <string name="please_wait">Please wait...</string>
+    <string name="show_weather">Show weather</string>
+    <string name="show_forecast">Show forecast</string>
+    <string name="city_placeholder">Here will go selected location</string>
 </resources>

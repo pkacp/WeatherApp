@@ -137,4 +137,15 @@ public class SaveWeatherToDb extends IntentService {
         dbManager.close();
 
     }
+
+//    private String rescueIfNotFound(JSONObject obj){
+//        String res;
+//        try {
+//            res = optString(obj);
+//        } catch (JSONException e) {
+//            e.printStackTrace();
+//            res = "";
+//        }
+//        return  res;
+//    }
 }

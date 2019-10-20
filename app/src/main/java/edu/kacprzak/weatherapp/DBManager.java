@@ -93,13 +93,6 @@ public class DBManager {
 
     }
 
-//    public int update(long _id, String json) {
-//        ContentValues contentValues = new ContentValues();
-//        contentValues.put(DatabaseHelper.JSON, json);
-//        int i = database.update(DatabaseHelper.TABLE_NAME, contentValues, DatabaseHelper._ID + " = " + _id, null);
-//        return i;
-//    }
-
     public void delete(long _id) {
         database.delete(DatabaseHelper.TABLE_NAME, DatabaseHelper._ID + "=" + _id, null);
     }
