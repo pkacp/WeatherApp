@@ -44,6 +44,7 @@ public class SettingsActivity extends AppCompatActivity {
     public static final String cityNameKey = "cityName";
     public static final String apiKey = "040754a4e689b45bedb7836ce6f2c49d";
     private static final int PERMISSION_REQUEST_GPS = 3124;
+    private double lat, lon;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +55,9 @@ public class SettingsActivity extends AppCompatActivity {
         btnGps.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new GetCityIdByGeoCoordinates(SettingsActivity.this).execute(getGpsCoordinates());
+                getGpsCoordinates();
+                GeoCoordinates gc = new GeoCoordinates(lat, lon);
+                new GetCityIdByGeoCoordinates(SettingsActivity.this).execute(gc);
             }
         });
 
@@ -115,10 +118,7 @@ public class SettingsActivity extends AppCompatActivity {
         }
     }
 
-    protected GeoCoordinates getGpsCoordinates() {
-
-        double lat = 999999.0;
-        double lon = 999999.0;
+    protected void getGpsCoordinates() {
 
         if (checkSelfPermission(Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_COARSE_LOCATION)) {
@@ -134,20 +134,19 @@ public class SettingsActivity extends AppCompatActivity {
                         public void onSuccess(Location location) {
                             if (location != null) {
                                 Log.d("GPS coordinates >>>>> ", location.getLatitude() + " : " + location.getLongitude());
-//                                result[0] = new GeoCoordinates(location.getLatitude(), location.getLongitude());
-//                                lat = location.getLatitude();
-//                                lon = location.getLatitude();
+                                lat = location.getLatitude();
+                                lon = location.getLongitude();
                             }
                         }
                     });
         }
-        return new GeoCoordinates(lat, lon);
     }
 
     protected class GetCityIdByGeoCoordinates extends AsyncTask<GeoCoordinates, Void, String> {
 
         Activity callingActivity;
         ProgressDialog dialog;
+        String fullUrlString;
 
         GetCityIdByGeoCoordinates(Activity activity) {
             this.callingActivity = activity;
@@ -162,7 +161,7 @@ public class SettingsActivity extends AppCompatActivity {
         @Override
         protected String doInBackground(GeoCoordinates... geoCoordinates) {
 
-            String fullUrlString = "http://api.openweathermap.org/data/2.5/weather?lat=" + geoCoordinates[0].getLat() + "&lon=" + geoCoordinates[0].getLon() + "&units=metric&APPID=" + apiKey;
+            fullUrlString = "http://api.openweathermap.org/data/2.5/weather?lat=" + geoCoordinates[0].getLat() + "&lon=" + geoCoordinates[0].getLon() + "&units=metric&APPID=" + apiKey;
 
             HttpURLConnection connection = null;
             BufferedReader reader = null;
@@ -219,6 +218,9 @@ public class SettingsActivity extends AppCompatActivity {
 
                 cityId = (obj.get("id")).toString();
                 cityName = (obj.get("name")).toString();
+
+                Log.d("Json res location: ", "city:" + cityId + " " + cityName + "URL: " + fullUrlString);
+
                 saveLocationToSharedPreferences(cityId, cityName);
                 setCityValueTextView(cityName);
 
