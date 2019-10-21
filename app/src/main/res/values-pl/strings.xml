@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WeatherApp</string>
+    <string name="city_name_info">Miasto</string>
+    <string name="city_placeholder">Tu pojawi się wybrana lokalizacja</string>
+    <string name="description_info">Opis</string>
+    <string name="forecast">Prognoza</string>
+    <string name="gps_permission_granted">Uprawnienia do GPS przyznane</string>
+    <string name="gps_permission_not_granted">Uprawnienia do GPS nieprzyznane</string>
+    <string name="humidity_info">Wilgotność:</string>
+    <string name="loading">Ładowanie</string>
+    <string name="location_null">Niedostępna lokalizacja GPS</string>
+    <string name="please_wait">Proszę czekać...</string>
+    <string name="pressure_info">Ciśnienie</string>
+    <string name="refresh">Odśwież</string>
+    <string name="save_settings">Zapisz</string>
+    <string name="selected_city_name_info">Wybrana lokalizacja:</string>
+    <string name="settings">Ustawienia</string>
+    <string name="show_forecast">Pokaż prognozę</string>
+    <string name="show_weather">Pokaż pogodę</string>
+    <string name="sunrise_time_info">Wschód słońca:</string>
+    <string name="sunset_time_info">Zachód słońca:</string>
+    <string name="temp_info">Temperatura:</string>
+    <string name="unable_to_read_from_shr_pref">Błąd odczytu ustawień</string>
+    <string name="update_time_info">Aktualizacja:</string>
+    <string name="use_current_localization">Użyj bieżącej lokalizacji</string>
+    <string name="use_location_from_list">Wczytaj lokalizację z listy</string>
+    <string name="weather">Aktualna pogoda</string>
+    <string name="wind_direction_info">Kierunek wiatru:</string>
+    <string name="wind_speed_info">Prędkość wiatru:</string>
+</resources>

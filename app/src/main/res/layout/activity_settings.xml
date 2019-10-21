@@ -32,21 +32,31 @@
         android:id="@+id/btnGps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:text="@string/use_current_localization"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/btnLocationList" />
+        app:layout_constraintTop_toBottomOf="@+id/spinner1" />
 
-    <Button
-        android:id="@+id/btnLocationList"
-        android:layout_width="wrap_content"
+<!--    <Button-->
+<!--        android:id="@+id/btnLocationList"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/use_location_from_list"-->
+<!--        app:layout_constraintEnd_toStartOf="@+id/guideline"-->
+<!--        app:layout_constraintHorizontal_bias="0.52"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/guideline2"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/guideline3" />-->
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/use_location_from_list"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintHorizontal_bias="0.52"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        android:background="@android:drawable/btn_dropdown"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline3" />
 
     <TextView
@@ -67,25 +77,33 @@
         app:layout_constraintStart_toEndOf="@+id/tvSelectedCityInfo"
         app:layout_constraintTop_toTopOf="@+id/tvSelectedCityInfo" />
 
-    <Button
-        android:id="@+id/btnGoToWeather"
+    <fragment
+        android:id="@+id/fragment"
+        android:name="edu.kacprzak.weatherapp.FragmentSettings"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="@string/show_weather"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/tvSelectedCityValue" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fragment2"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
-        android:id="@+id/btnGoToForecast"
+    <fragment
+        android:id="@+id/fragment2"
+        android:name="edu.kacprzak.weatherapp.FragmentWeather"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="@string/show_forecast"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/btnGoToWeather" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <fragment
+        android:id="@+id/fragment3"
+        android:name="edu.kacprzak.weatherapp.FragmentForecast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/fragment2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

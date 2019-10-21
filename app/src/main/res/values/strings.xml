@@ -5,7 +5,7 @@
     <string name="update_time_info">Updated at:</string>
     <string name="city_name_info">City:</string>
     <string name="temp_info">Temperature:</string>
-    <string name="description_info">Descryption</string>
+    <string name="description_info">Descryption:</string>
     <string name="pressure_info">Pressure:</string>
     <string name="humidity_info">Humidity:</string>
     <string name="wind_speed_info">Wind speed:</string>
@@ -30,5 +30,8 @@
     <string name="show_weather">Show weather</string>
     <string name="show_forecast">Show forecast</string>
     <string name="city_placeholder">Here will go selected location</string>
+    <string name="settings">Settings</string>
+    <string name="weather">Current weather</string>
+    <string name="forecast">Forecast</string>
 
 </resources>
