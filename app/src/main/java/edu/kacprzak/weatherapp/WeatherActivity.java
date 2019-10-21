@@ -16,8 +16,6 @@ public class WeatherActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
 
-
-
         final Button btnRefresh = findViewById(R.id.btnRefresh);
         btnRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,23 +24,15 @@ public class WeatherActivity extends Activity {
             }
         });
 
+        final Button btnFetch = findViewById(R.id.btnFetchData);
+        btnFetch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                new GetWeatherByIdFromShrPrefAsyncTask(getApplicationContext()).execute();
+            }
+        });
+
     }
-
-//    private void callGetData(){
-//        sharedpreferences = getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
-//
-//        if(sharedpreferences.contains(cityIdKey)){
-//            new GetWeather(this, sharedpreferences.getInt(cityIdKey, 2643743), "pl", apiKey).execute(); //TODO get language depending on os lang
-//        }else if (sharedpreferences.contains(latKey) && sharedpreferences.contains(lonKey)){
-//            new GetWeather(this, (double) sharedpreferences.getFloat(latKey, 0.0f), (double) sharedpreferences.getFloat(lonKey, 0.0f), "pl", apiKey).execute();
-//        }else{
-//            String msg = getString(R.string.unable_to_read_from_shr_pref);
-//            Toast toast = Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG);
-//            toast.show();
-//        }
-//    }
-
-
 
     public void setTextViewsValues() {
         dbManager = new DBManager(this);
@@ -78,12 +68,6 @@ public class WeatherActivity extends Activity {
             String directions[] = {"N", "NE", "E", "SE", "S", "SW", "W", "NW"}; //TODO change to string res
             return directions[(int) Math.round(((Double.parseDouble(deg) % 360) / 45)) % 8];
         }else return "";
-    }
-
-
-
-    private void getLocationFromSharedPreferences(){
-
     }
 }
 

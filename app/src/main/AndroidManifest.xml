@@ -13,6 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ForecastActivity"></activity>
         <activity android:name=".SettingsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,11 +23,11 @@
         </activity>
 
         <service android:name=".SaveWeatherToDb" />
-        <service android:name=".CyclicWeatherUpdateService"
-            android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <service
+            android:name=".CyclicWeatherUpdateService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
 
-        <activity android:name=".WeatherActivity">
-        </activity>
+        <activity android:name=".WeatherActivity"></activity>
 
         <receiver android:name=".OnBootReceiver">
             <intent-filter>

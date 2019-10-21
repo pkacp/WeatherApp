@@ -16,8 +16,6 @@ import java.net.URL;
 
 public class GetWeatherByIdFromShrPrefAsyncTask extends AsyncTask<Void, Void, String> {
 
-    //    private Activity callingActivity;
-//    ProgressDialog dialog;
     private Context context;
     private String language = "";
     private String urlBeginWeather = "http://api.openweathermap.org/data/2.5/weather?";
